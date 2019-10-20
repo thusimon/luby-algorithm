@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 8/30/2018.
  */
-import expect from 'expect';
 import groupSpecialEqualStrings from './GroupSpecialEqualStrings';
 
 describe("Testing special equal strings", ()=>{

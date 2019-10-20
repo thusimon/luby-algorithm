@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/1/2018.
  */
-import expect from 'expect';
 import binaryGap from './BinaryGap';
 
 describe("Binary Gap testing",()=>{

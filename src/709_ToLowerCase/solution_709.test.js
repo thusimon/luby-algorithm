@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 8/26/2018.
  */
-import expect from 'expect';
 import toLowerCase from './solution_709';
 
 describe("To lower case test", ()=>{

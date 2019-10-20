@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 8/29/2018.
  */
-import expect from 'expect';
 import numberLinesToWriteString from './NumberLinesToWriteString';
 
 describe("Testing number of lines to write string", ()=>{

@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/3/2018.
  */
-import expect from 'expect';
 import nimGame from './NimGame';
 
 describe("Nim Game!!",()=>{

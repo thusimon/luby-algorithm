@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/12/2018.
  */
-import expect from 'expect';
 import convertBST2Tree from './ConvertBST2Tree';
 import TreeNode from '../common/TreeNode';
 

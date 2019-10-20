@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/1/2018.
  */
-import expect from 'expect';
 import baseballGame from './BaseballGame';
 
 describe("Baseball game!",()=>{

@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/3/2018.
  */
-import expect from 'expect';
 import binaryNumberAlterBits from './BinaryNumberAlterBits';
 
 describe("Binary number with alternating bits!",()=>{

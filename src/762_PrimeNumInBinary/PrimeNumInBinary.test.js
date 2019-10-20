@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/3/2018.
  */
-import expect from 'expect';
 import primeNumInBinary from './PrimeNumberInBinary';
 
 describe("Prime number in binary!",()=>{

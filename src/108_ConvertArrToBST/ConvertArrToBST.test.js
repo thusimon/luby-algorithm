@@ -3,7 +3,6 @@
  */
 import TreeNode from '../common/TreeNode';
 import convertArrToBst from './ConvertArrToBST';
-import expect from 'expect';
 
 describe("Convert sorted array to BST!",()=>{
   it("should return [0,-10,5,null,-3,null,9]",()=>{

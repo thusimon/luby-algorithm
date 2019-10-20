@@ -2,7 +2,6 @@
  * Created by Lu on 8/26/2018.
  */
 
-import expect from 'expect';
 import numJeweIsInStones from './solution_771';
 
 describe('Jewels and stones test', ()=>{

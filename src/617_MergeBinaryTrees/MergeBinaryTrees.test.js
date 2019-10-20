@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 8/28/2018.
  */
-import expect from 'expect';
 import mergeBinaryTrees from './MergeBinaryTrees';
 import TreeNode from '../common/TreeNode';
 import * as TreeUtils from '../common/TreeUtils';

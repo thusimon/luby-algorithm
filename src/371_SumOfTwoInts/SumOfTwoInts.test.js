@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/8/2018.
  */
-import expect from 'expect';
 import sumOfTwoInts from './SumOfTwoInts';
 
 describe("Sum of two ints!",()=>{

@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/5/2018.
  */
-import expect from 'expect';
 import largetTriangleArea from './LargestTriangleArea';
 
 describe("larget triangle area",()=>{

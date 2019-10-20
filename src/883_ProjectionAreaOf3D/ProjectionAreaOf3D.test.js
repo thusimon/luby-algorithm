@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 8/29/2018.
  */
-import expect from 'expect';
 import projectionAreaOf3D from './ProjectionAreaOf3D';
 
 describe("Testing projecting area of 3d", ()=>{

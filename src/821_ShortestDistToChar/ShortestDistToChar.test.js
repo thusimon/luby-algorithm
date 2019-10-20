@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/1/2018.
  */
-import expect from 'expect';
 import shortestDistToChar from './ShortestDistToChar';
 
 describe("Shortest dist to char!",()=>{

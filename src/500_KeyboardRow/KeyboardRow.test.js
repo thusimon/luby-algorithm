@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 8/31/2018.
  */
-import expect from 'expect';
 import keyboardRow from './KeyboardRow';
 
 describe("Keyboard row same",()=>{

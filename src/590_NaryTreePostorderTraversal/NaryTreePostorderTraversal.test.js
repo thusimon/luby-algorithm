@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/1/2018.
  */
-import expect from 'expect';
 import TreeNodeN from '../common/TreeNodeN';
 import naryTreePostorder from './NaryTreePostorderTraversal';
 

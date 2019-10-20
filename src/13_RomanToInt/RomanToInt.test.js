@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/9/2018.
  */
-import expect from 'expect';
 import romanToInt from './RomanToInt';
 
 describe("Roman to int!!",()=>{

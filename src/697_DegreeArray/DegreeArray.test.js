@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/17/2018.
  */
-import expect from 'expect';
 import degreeArray from './DegreeArray';
 
 describe("Array Degree!",()=>{

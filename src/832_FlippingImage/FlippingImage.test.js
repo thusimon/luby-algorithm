@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 8/26/2018.
  */
-import expect from 'expect';
 import flippingImage from './FlippingImage';
 
 describe("Flipping image...",()=>{

@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/6/2018.
  */
-import expect from 'expect';
 import countBinarySub from './CountBinarySubstr';
 
 describe("Count binary sub string!",()=>{

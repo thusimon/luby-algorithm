@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/2/2018.
  */
-import expect from 'expect';
 import islandPerimeter from './IslandPerimeter';
 
 describe("Island Perimeter!",()=>{

@@ -1,7 +1,6 @@
 /**
  * Created by Lu on 9/2/2018.
  */
-import expect from 'expect';
 import trimBST from './TrimBST';
 import TreeNode from '../common/TreeNode';
 
