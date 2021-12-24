@@ -3,7 +3,7 @@ from TreeNode import TreeNode
 class BST:
   def __init__(self):
     self.root = None
-    return self
+
   def insert(self, val):
     if self.root == None:
       self.root = TreeNode(val)
@@ -24,6 +24,7 @@ class BST:
             return self
           else:
             curNode = curNode.right
+
   def find(self, val):
     if self.root == None:
       return None
@@ -36,8 +37,48 @@ class BST:
       else:
         curNode = curNode.left
     return None
-  def remove(self, val):
-    if self.root == None:
-      return None
+
+  def display(self, node):
+    if node != None:
+      self.display(node.left)
+      print(node.val)
+      self.display(node.right)
+
+  def minSubTree(node):
+    curNode = node
+    while curNode.left != None:
+      curNode = curNode.left
+    return curNode
     
-    pass
+  def remove(self, node, val):
+    if node == None:
+      return None
+    if node.val < val:
+      node.right = self.remove(node.right, val)
+    elif node.val > val:
+      node.left = self.remove(node.left, val)
+    else:
+      if node.left == None:
+        temp = node.right
+        node = None
+        return temp
+      elif node.right == None:
+        temp = node.left
+        node = None
+        return temp
+      else:
+        #both left right exists
+        minNodeInRight = self.minSubTree(node.right)
+        node.val = minNodeInRight.val
+        node.right = self.remove(node.right, minNodeInRight.val)
+    return node
+
+bst = BST()
+bst.insert(20)
+bst.insert(10)
+bst.insert(5)
+bst.insert(15)
+bst.insert(30)
+bst.display(bst.root)
+bst.remove(bst.root, 30)
+bst.display(bst.root)
