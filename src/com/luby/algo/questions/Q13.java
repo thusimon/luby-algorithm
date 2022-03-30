@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Q13 {
-  public static class Solution {
+  public class Solution {
     public static final Map<String, Integer> RomanToIntMap = Map.of(
       "I",1,
       "V",5,
@@ -39,7 +39,7 @@ public class Q13 {
     }
   }
   public static void main(String[] args) {
-    Solution s = new Solution();
+    Solution s = new Q13().new Solution();
     System.out.println(s.romanToInt("I"));
     System.out.println(s.romanToInt("IV"));
     System.out.println(s.romanToInt("V"));
