@@ -59,9 +59,12 @@ public class Q21 {
 
   public static void main(String[] args) {
     Solution s = new Q21().new Solution();
-    ListNode list1 = new ListNode(new int[] {1, 2, 3});
-    ListNode list2 = new ListNode(new int[] {1, 3, 4});
-    ListNode merged = s.mergeTwoLists(list1, list2);
+    ListNode l1 = new ListNode(new int[] {1, 2, 3});
+    ListNode l2 = new ListNode(new int[] {1, 3, 4});
+    ListNode l3 = new ListNode(new int[] {5});
+    ListNode merged = s.mergeTwoLists(l1, l2);
+    merged.print();
+    merged = s.mergeTwoLists(l1, l3);
     merged.print();
   }
 }
