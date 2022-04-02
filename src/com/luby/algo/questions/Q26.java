@@ -5,11 +5,15 @@ import java.util.Arrays;
 public class Q26 {
   public class Solution {
     /**
-     * {0, 0, 1, 1, 1, 2, 2, 3, 3, 4}
-     * {0, 1, 0, 1, 1, 2, 2, 3, 3, 4}
-     * {0, 1, 2, 1, 1, 0, 2, 3, 3, 4}
-     * {0, 1, 2, 3, 1, 0, 2, 1, 3, 4}
-     * {0, 1, 2, 3, 4, 0, 2, 1, 3, 1};
+     * remove duplicated element in array which is already sorted, don't use list, return the unique element count
+     * the array should also contain the unique elements at the beginning, e.g
+     * [0, 0, 1, 1, 1, 2, 2, 3, 3, 4] count = 1
+     * [0, 1, 0, 1, 1, 2, 2, 3, 3, 4] count = 2
+     * [0, 1, 2, 1, 1, 0, 2, 3, 3, 4] count = 3
+     * [0, 1, 2, 3, 1, 0, 2, 1, 3, 4] count = 4
+     * [0, 1, 2, 3, 4, 0, 2, 1, 3, 1] count = 5
+     * @param nums
+     * @return
      */
     public int removeDuplicates(int[] nums) {
       if (nums == null || nums.length < 1) {

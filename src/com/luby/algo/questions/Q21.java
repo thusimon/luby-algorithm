@@ -8,6 +8,13 @@ public class Q21 {
       list.next = new ListNode(val);
       return list.next;
     }
+
+    /**
+     * two sorted linked lists list1 and list2, merge them as one sorted list
+     * @param list1
+     * @param list2
+     * @return
+     */
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
       if (list2 == null) {
         return list1;

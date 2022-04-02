@@ -5,6 +5,12 @@ import java.util.stream.Collectors;
 
 public class Q1 {
   public class Solution {
+    /**
+     * indices of the two numbers such that they add up to target
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int[] twoSum(int[] nums, int target) {
       int[] indexs = new int[2];
       if (nums == null || nums.length < 2) {

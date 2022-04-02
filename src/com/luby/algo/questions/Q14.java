@@ -4,6 +4,11 @@ import java.util.*;
 
 public class Q14 {
   public class Solution {
+    /**
+     * find the longest common prefix (LCP) string amongst an array of strings.
+     * @param strs
+     * @return
+     */
     public String longestCommonPrefixAnyWhere(String[] strs) {
       String result = "";
       if (strs == null || strs.length == 0) {

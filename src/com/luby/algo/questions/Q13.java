@@ -15,6 +15,11 @@ public class Q13 {
       "M",1000
     );
 
+    /**
+     * Roman to int: MCMXCIV = 1994
+     * @param s
+     * @return
+     */
     public int romanToInt(String s) {
       int result = 0;
       int temp = 0;

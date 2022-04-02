@@ -4,6 +4,11 @@ import java.util.Stack;
 
 public class Q20 {
   public class Solution {
+    /**
+     * check if the parentheses in the string is valid
+     * @param s
+     * @return
+     */
     public boolean isValid(String s) {
       if (s == null || s.length() == 0) {
         return true;
