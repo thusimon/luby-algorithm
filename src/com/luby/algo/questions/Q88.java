@@ -4,6 +4,17 @@ import java.util.Arrays;
 
 public class Q88 {
   public class Solution {
+    // watch again
+    /**
+     * nums1 has length m+n, nums has length n
+     * nums1 m~n-1 elements are 0
+     * nums1 and nums2 are already sorted non-descending
+     * after merge, nums1 will have all the numbers and sorted non-descending
+     * @param nums1
+     * @param m
+     * @param nums2
+     * @param n
+     */
     public void merge(int[] nums1, int m, int[] nums2, int n) {
       int idx1 = m - 1;
       int idx2 = n - 1;
