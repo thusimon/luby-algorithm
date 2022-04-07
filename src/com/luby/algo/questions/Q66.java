@@ -4,6 +4,14 @@ import java.util.Arrays;
 
 public class Q66 {
   public class Solution {
+    /**
+     * a large integer represented as an integer array digits
+     * where each digits[i] is the ith digit of the integer
+     * increase the integer by 1, and return the array representation
+     * e.g [1, 0, 9] -> [1, 1, 0]
+     * @param digits
+     * @return
+     */
     public int[] plusOne(int[] digits) {
       if (digits == null || digits.length == 0) {
         return digits;
