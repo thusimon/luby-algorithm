@@ -1,6 +1,5 @@
 package com.luby.algo.questions;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Q13 {
