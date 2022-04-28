@@ -50,7 +50,6 @@ public class Q11 {
       return maxArea;
     }
   }
-
   public static void main(String[] args) {
     Solution s = new Q11().new Solution();
     System.out.println(s.maxArea(new int[] {1, 8, 6, 2, 5, 4, 8, 3, 7}));
