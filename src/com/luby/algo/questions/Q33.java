@@ -32,6 +32,7 @@ public class Q33 {
     }
 
     //stop playing the legend of heros, get back to exercise!
+    //lu, work hard!
     public int search(int[] nums, int target) {
       int start = 0;
       int end = nums.length - 1;
