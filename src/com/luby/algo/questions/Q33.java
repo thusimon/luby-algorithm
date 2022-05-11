@@ -36,6 +36,7 @@ public class Q33 {
     //another cheat
     //start next week
     //another guilty day
+    //probably will end this week!
     public int search(int[] nums, int target) {
       int start = 0;
       int end = nums.length - 1;
