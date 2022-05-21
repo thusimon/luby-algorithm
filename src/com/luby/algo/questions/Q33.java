@@ -37,7 +37,7 @@ public class Q33 {
     //start next week
     //another guilty day
     //will end this week!
-    //another week Thursday?!
+    //another week Friday?!
     public int search(int[] nums, int target) {
       int start = 0;
       int end = nums.length - 1;
