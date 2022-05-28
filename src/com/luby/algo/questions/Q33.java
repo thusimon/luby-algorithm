@@ -31,13 +31,7 @@ public class Q33 {
       return -1;
     }
 
-    //stop playing the legend of heros, get back to exercise!
-    //lu, work hard!
-    //another cheat
-    //start next week
-    //another guilty day
-    //will end this week!
-    //another week Thursday?!
+    //Friday
     public int search(int[] nums, int target) {
       int start = 0;
       int end = nums.length - 1;
