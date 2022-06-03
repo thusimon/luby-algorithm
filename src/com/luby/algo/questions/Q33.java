@@ -31,7 +31,7 @@ public class Q33 {
       return -1;
     }
 
-    //Tuesday
+    //Thursday
     public int search(int[] nums, int target) {
       int start = 0;
       int end = nums.length - 1;
