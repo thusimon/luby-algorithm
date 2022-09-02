@@ -31,33 +31,48 @@ public class Q33 {
       return -1;
     }
 
-    //Wednesday
     public int search(int[] nums, int target) {
+      if (nums == null || nums.length == 0) {
+        return -1;
+      }
+      if (nums.length == 1) {
+        return nums[0] == target ? 0 : -1;
+      }
       int start = 0;
       int end = nums.length - 1;
-      int mid = start + (end-start)/2;
-      while(start <= end){
-        if(nums[mid] == target){
-          return mid ;
+      while (start <= end) {
+        int startVal = nums[start];
+        int endVal = nums[end];
+        int mid = (start + end) / 2;
+        int midVal = nums[mid];
+        if (midVal == target) {
+          return mid;
         }
-        if(nums[start] <= nums[mid]){
-          if(nums[start] <= target && target <= nums[mid]){
+        if (startVal <= midVal) {
+          // start-mid is in ascending order
+          if (startVal <= target && target < midVal) {
+            // target falls between start-mid
             end = mid - 1;
-          }
-          else{
+          } else {
+            // target falls between mid-end
             start = mid + 1;
           }
-        }
-        if(nums[mid] <= nums[end]){
-          if(nums[mid]<=target && nums[end] >= target){
+        } else {
+          // mid-end is in ascending order
+          if (midVal < target && target <= endVal) {
             start = mid + 1;
-          }else{
+          } else {
             end = mid - 1;
           }
         }
-        mid = start+ (end - start) /2;
       }
       return -1;
     }
+  }
+
+  public static void main(String[] args) {
+    Q33.Solution s = new Q33().new Solution();
+    int[] num1 = new int[] {3, 4, 0, 1, 2};
+    System.out.println(s.search(num1, 2));
   }
 }
