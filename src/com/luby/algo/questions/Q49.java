@@ -2,7 +2,9 @@ package com.luby.algo.questions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Q49 {
@@ -29,17 +31,24 @@ public class Q49 {
       return Arrays.stream(charBits).mapToObj(String::valueOf).collect(Collectors.joining(","));
     }
     public List<List<String>> groupAnagrams(String[] strs) {
-      List<List<String>> result = new ArrayList<>();
+      Map<String, List<String>> map = new HashMap<>();
       for(String s : strs) {
         String sKey = computeKey(s);
-        System.out.println(sKey);
+        List<String> val = map.get(sKey);
+        if (val == null) {
+          val = new ArrayList<>();
+          map.put(sKey, val);
+        }
+        val.add(s);
       }
-      return result;
+      return map.values().stream().toList();
     }
   }
 
   public static void main(String[] args) {
     Q49.Solution solution = new Q49().new Solution();
-    System.out.println(solution.groupAnagrams(new String[] {"ate", "eat", "aatz"}));
+    System.out.println(solution.groupAnagrams(new String[] {"eat","tea","tan","ate","nat","bat"}));
+    System.out.println(solution.groupAnagrams(new String[] {""}));
+    System.out.println(solution.groupAnagrams(new String[] {"a"}));
   }
 }
