@@ -1,5 +1,8 @@
 package com.luby.algo.questions;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Q55 {
   class Solution {
     /**
@@ -14,8 +17,42 @@ public class Q55 {
      * @param nums
      * @return
      */
-    public boolean canJump(int[] nums) {
-      return true;
+    private boolean canJumpInternal(int start, int[] nums, Map<Integer, Boolean> records) {
+      int len = nums.length;
+      if (len == 0 || start >= len - 1) {
+        return true;
+      }
+      int maxJump = nums[start];
+      if (maxJump == 0 && start < len - 1) {
+        return false;
+      }
+      boolean result = false;
+      for (int i = 1; i <= maxJump; i++) {
+        boolean nextJump = false;
+        if (records.get(start + i) == null) {
+          nextJump = canJumpInternal(start + i, nums, records);
+          records.put(start + i, nextJump);
+        } else {
+          nextJump = records.get(start + i);
+        }
+        result = result || nextJump;
+        if (result) {
+          return result;
+        }
+      }
+      return result;
     }
+    public boolean canJump(int[] nums) {
+      Map<Integer, Boolean> records = new HashMap<>();
+      return canJumpInternal(0, nums, records);
+    }
+  }
+
+  public static void main(String[] args) {
+    Q55.Solution s = new Q55().new Solution();
+    int[] nums = new int[] {2,3,1,1,4};
+    System.out.println(s.canJump(nums));
+    nums = new int[] {3,2,1,0,4};
+    System.out.println(s.canJump(nums));
   }
 }
