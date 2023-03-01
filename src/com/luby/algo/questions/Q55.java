@@ -43,6 +43,11 @@ public class Q55 {
       return result;
     }
     public boolean canJump(int[] nums) {
+      int len = nums.length;
+      if (len <= 1) return true;
+      boolean[] steps = new boolean[len];
+      steps[0] = true;
+      
       Map<Integer, Boolean> records = new HashMap<>();
       return canJumpInternal(0, nums, records);
     }
