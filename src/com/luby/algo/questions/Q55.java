@@ -17,39 +17,23 @@ public class Q55 {
      * @param nums
      * @return
      */
-    private boolean canJumpInternal(int start, int[] nums, Map<Integer, Boolean> records) {
-      int len = nums.length;
-      if (len == 0 || start >= len - 1) {
-        return true;
-      }
-      int maxJump = nums[start];
-      if (maxJump == 0 && start < len - 1) {
-        return false;
-      }
-      boolean result = false;
-      for (int i = 1; i <= maxJump; i++) {
-        boolean nextJump = false;
-        if (records.get(start + i) == null) {
-          nextJump = canJumpInternal(start + i, nums, records);
-          records.put(start + i, nextJump);
-        } else {
-          nextJump = records.get(start + i);
-        }
-        result = result || nextJump;
-        if (result) {
-          return result;
-        }
-      }
-      return result;
-    }
     public boolean canJump(int[] nums) {
       int len = nums.length;
       if (len <= 1) return true;
       boolean[] steps = new boolean[len];
       steps[0] = true;
-      
-      Map<Integer, Boolean> records = new HashMap<>();
-      return canJumpInternal(0, nums, records);
+
+      for(int i = 0; i < len; i++) {
+        if (steps[i]) {
+          int jumpSteps = nums[i];
+          for(int j = 1; j <= jumpSteps; j++) {
+            if (i + j < len) {
+              steps[i + j] = true;
+            }
+          }
+        }
+      }
+      return steps[len - 1];
     }
   }
 
