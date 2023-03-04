@@ -35,13 +35,26 @@ public class Q55 {
       }
       return steps[len - 1];
     }
+
+    public boolean canJumpV2(int[] nums) {
+      int len = nums.length;
+      if (len <= 1) return true;
+      int maxReach = 0;
+      for (int i = 0; i <= maxReach; i++) {
+        maxReach = Math.max(maxReach, i + nums[i]);
+        if (maxReach >= len - 1) {
+          return true;
+        }
+      }
+      return false;
+    }
   }
 
   public static void main(String[] args) {
     Q55.Solution s = new Q55().new Solution();
     int[] nums = new int[] {2,3,1,1,4};
-    System.out.println(s.canJump(nums));
+    System.out.println(s.canJumpV2(nums));
     nums = new int[] {3,2,1,0,4};
-    System.out.println(s.canJump(nums));
+    System.out.println(s.canJumpV2(nums));
   }
 }
