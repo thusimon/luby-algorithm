@@ -13,6 +13,10 @@ public class Q75 {
      * Input: nums = [2,0,2,1,1,0]
      * Output: [0,0,1,1,2,2]
      * You must solve this problem without using the library's sort function.
+     */
+
+    /**
+     * count sort, when unique number is small, we can use this approach.
      * @param nums
      */
     public void sortColors(int[] nums) {
@@ -38,14 +42,49 @@ public class Q75 {
         nums[i] = 2;
       }
     }
+
+    /**
+     * snowball sort, this approach will move all 2 to the right hand side
+     * then move all 1 to the middle
+     * the idea is, if we encounter n 2, then while i increase to num.length - 1, num[i-n] should be set to 2
+     * this can guarantee that after i reaches to num.length - 1, all the num[length - n] to num[length - 1] are all 2
+     * @param nums
+     */
+    public void sortColorsSnowball(int[] nums) {
+      int count2 = 0;
+      for(int i = 0; i < nums.length; i++) {
+        if (nums[i] == 2) {
+          count2++;
+        } else {
+          if (count2 > 0) {
+            nums[i - count2] = nums[i];
+            nums[i] = 2;
+          }
+        }
+      }
+
+      int count1 = 0;
+      for(int i = 0; i < nums.length - count2; i++) {
+        if(nums[i] == 1) {
+          count1++;
+        } else {
+          if (count1 > 0) {
+            nums[i - count1] = nums[i];
+            nums[i] = 1;
+          }
+        }
+      }
+    }
   }
   public static void main(String[] args) {
     Q75.Solution s = new Q75().new Solution();
     int[] nums = new int[]{2, 0, 2, 1, 1, 0};
-    s.sortColors(nums);
-    System.out.printf(Arrays.toString(nums));
+    //s.sortColors(nums);
+    s.sortColorsSnowball(nums);
+    System.out.println(Arrays.toString(nums));
     nums = new int[]{2, 0, 1};
-    s.sortColors(nums);
-    System.out.printf(Arrays.toString(nums));
+    //s.sortColors(nums);
+    s.sortColorsSnowball(nums);
+    System.out.println(Arrays.toString(nums));
   }
 }
