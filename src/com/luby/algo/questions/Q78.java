@@ -1,7 +1,6 @@
 package com.luby.algo.questions;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Q78 {
@@ -36,12 +35,33 @@ public class Q78 {
     public List<List<Integer>> subsets(int[] nums) {
       return subsetsInternal(nums, nums.length);
     }
+
+    private void backtrack(List<List<Integer>> result, List<Integer> tempList, int curIdx, int[] nums) {
+      List<Integer> tempCopy = new ArrayList<>(tempList);
+      if (curIdx >= nums.length) {
+        result.add(tempCopy);
+        return;
+      }
+      // decision to add num[curIdx]
+      tempCopy.add(nums[curIdx]);
+      backtrack(result, tempCopy, curIdx + 1, nums);
+
+      // decision to not add num[curIdx], remove it since it is just added
+      tempCopy.remove(tempCopy.size() - 1);
+      backtrack(result, tempCopy, curIdx + 1, nums);
+    }
+    public List<List<Integer>> subsetsV2(int[] nums) {
+      List<List<Integer>> subsets = new ArrayList<>();
+      List<Integer> tempList = new ArrayList<>();
+      backtrack(subsets, tempList, 0, nums);
+      return subsets;
+    }
   }
 
   public static void main(String[] args) {
     Q78.Solution s = new Q78().new Solution();
     int[] nums = new int[]{1, 2, 3};
-    List<List<Integer>> subsets = s.subsets(nums);
+    List<List<Integer>> subsets = s.subsetsV2(nums);
     System.out.println(subsets.toString());
   }
 }
