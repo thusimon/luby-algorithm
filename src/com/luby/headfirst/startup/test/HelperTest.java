@@ -1,6 +1,7 @@
 package com.luby.headfirst.startup.test;
 
 import com.luby.headfirst.startup.Helper;
+import com.luby.headfirst.startup.Startup;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -18,9 +19,33 @@ public class HelperTest {
     System.setIn(in);
   }
 
-  private boolean isStraightSegment(List<Integer> indexes) {
-    return true;
+  private boolean isIndexesValid(int boardSize, List<Integer> indexes) {
+    // the indexes must have 3 elements
+    if (indexes.size() != 3) {
+      return false;
+    }
+    // all the indexes are in range
+    int maxRange = boardSize * boardSize - 1;
+    for(int idx : indexes) {
+      if (idx < 0 || idx > maxRange) {
+        return false;
+      }
+    }
+    int idx0 = indexes.get(0);
+    int idx1 = indexes.get(1);
+    int idx2 = indexes.get(2);
+    // check if indexes are in the same row
+    if (idx1 == idx0 + 1 && idx2 == idx1 + 1 &&
+      idx0 / boardSize == idx1 / boardSize && idx0 / boardSize == idx2 / boardSize) {
+      return true;
+    }
+    // check if indexes are in the same column
+    if (idx1 == idx0 + boardSize && idx2 == idx1 + boardSize) {
+      return true;
+    }
+    return false;
   }
+
 
   @Before
   public void setup() {
@@ -36,18 +61,28 @@ public class HelperTest {
 
   @Test
   public void testConvertCoordToIndex() {
-    assertEquals(Helper.convertCoordToIndex(7, "A0"), 0);
-    assertEquals(Helper.convertCoordToIndex(7, "A3"), 3);
-    assertEquals(Helper.convertCoordToIndex(7, "A6"), 6);
-    assertEquals(Helper.convertCoordToIndex(7, "A7"), -1);
-    assertEquals(Helper.convertCoordToIndex(7, "b0"), 7);
-    assertEquals(Helper.convertCoordToIndex(7, "d5"), 26);
-    assertEquals(Helper.convertCoordToIndex(7, "g6"), 48);
-    assertEquals(Helper.convertCoordToIndex(7, "H1"), -1);
+    assertEquals(helper.convertCoordToIndex(7, "A0"), 0);
+    assertEquals(helper.convertCoordToIndex(7, "A3"), 3);
+    assertEquals(helper.convertCoordToIndex(7, "A6"), 6);
+    assertEquals(helper.convertCoordToIndex(7, "A7"), 7);
+    assertEquals(helper.convertCoordToIndex(7, "b0"), 7);
+    assertEquals(helper.convertCoordToIndex(7, "d5"), 26);
+    assertEquals(helper.convertCoordToIndex(7, "g6"), 48);
+    assertEquals(helper.convertCoordToIndex(7, "H1"), 50);
   }
 
   @Test
   public void testGenerateStartup() {
+    Startup startup = helper.generateStartup(7);
+    assertEquals(isIndexesValid(7, startup.getIndexes()), true);
+  }
 
+  @Test
+  public void testGenerateStartups() {
+    List<Startup> startups = helper.generateStartups(7, 3);
+    for(Startup startup : startups) {
+      assertEquals(isIndexesValid(7, startup.getIndexes()), true);
+    }
+    assertEquals(startups.size(), 3);
   }
 }

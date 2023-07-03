@@ -1,7 +1,6 @@
 package com.luby.headfirst.startup;
 
 import java.util.List;
-import java.util.Set;
 
 public class Startup {
   private List<Integer> indexes;
@@ -18,8 +17,14 @@ public class Startup {
   }
 
   public boolean checkHit(int index) {
-    boolean hit = false;
-    return hit;
+    int hitIndex = indexes.indexOf(index);
+    if (hitIndex > -1) {
+      indexes.remove(hitIndex);
+      System.out.println("Hit");
+      return true;
+    }
+    System.out.println("Miss");
+    return false;
   }
 
   public boolean isSink() {

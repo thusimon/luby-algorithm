@@ -4,9 +4,8 @@ import com.luby.headfirst.startup.Startup;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
@@ -15,7 +14,7 @@ public class StartupTest {
   private Startup startup;
   @Before
   public void setup() {
-    startup = new Startup(List.of(1,2,3));
+    startup = new Startup(new ArrayList<>(List.of(1,2,3)));
   }
   @Test
   public void testCheckHit() {
