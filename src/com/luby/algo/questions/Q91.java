@@ -18,7 +18,7 @@ public class Q91 {
      * @return numDecodings
      */
     public int numDecodings(String s) {
-      return 2;
+      return 1;
     }
   }
 }
