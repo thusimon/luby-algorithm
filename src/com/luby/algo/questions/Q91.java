@@ -18,7 +18,29 @@ public class Q91 {
      * @return numDecodings
      */
     public int numDecodings(String s) {
-      return 1;
+      if (s == null || s.length() == 0) {
+        return 0;
+      }
+      int len = s.length();
+      int[] dp = new int[len + 1];
+      dp[0] = 1;
+      dp[1] = s.charAt(0) == '0' ? 0 : 1;
+      for(int i = 2; i <= len; i++) {
+        int firstV = Integer.parseInt(s.substring(i - 1, i));
+        int secondV = Integer.parseInt(s.substring(i - 2, i));
+        if (firstV >=1 && firstV <= 9) {
+          dp[i] += dp[i - 1];
+        }
+        if (secondV >= 10 && secondV <= 26) {
+          dp[i] += dp[i - 2];
+        }
+      }
+      return dp[len];
     }
+  }
+
+  public static void main(String[] args) {
+    Q91.Solution s = new Q91().new Solution();
+    System.out.println(s.numDecodings("11106"));
   }
 }
