@@ -73,7 +73,7 @@ public class Q91 {
     System.out.println(s.numDecodingsV2("11106"));
     System.out.println(s.numDecodings("226"));
     System.out.println(s.numDecodingsV2("226"));
-    System.out.println(s.numDecodings("123123"));
+    System.out.println(s.numDecodings("1231234"));
     System.out.println(s.numDecodingsV2("1231234"));
   }
 }
