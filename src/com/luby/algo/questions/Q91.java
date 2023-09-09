@@ -65,15 +65,53 @@ public class Q91 {
       int t2 = numDecodingsV2(sub2) > 0 ? numDecodingsV2(sub2_left) : 0;
       return t1 + t2;
     }
+
+    public int numDecodingsV3(String s) {
+      if (s == null || s.length() == 0) {
+        return 0;
+      }
+      int dp[] = new int[s.length() + 1];
+      dp[0] = 1;
+      if (s.charAt(0) == '0') {
+        dp[1] = 0;
+      } else {
+        dp[1] = 1;
+      }
+      if (s.length() == 1) {
+        return dp[1];
+      }
+      int subInt2 = Integer.parseInt(s.substring(0, 2));
+      if (subInt2 >=10 && subInt2 <=26) {
+        dp[2] = 1 + dp[1];
+      }
+      if (s.length() == 2) {
+        return dp[2];
+      }
+      for (int i = 2; i < s.length(); i++) {
+        char s1 = s.charAt(i);
+        if (s1 <= '9' && s1 >= '1') {
+          dp[i+1] += dp[i];
+        }
+        subInt2 = Integer.parseInt(s.substring(i-1, i+1));
+        if (subInt2 >=10 && subInt2 <=26) {
+          dp[i+1] += dp[i-1];
+        }
+      }
+      return dp[s.length()];
+    }
   }
 
   public static void main(String[] args) {
     Q91.Solution s = new Q91().new Solution();
-    System.out.println(s.numDecodings("11106"));
+    System.out.println(s.numDecodingsV3(""));
+    System.out.println(s.numDecodingsV3("1"));
+    System.out.println(s.numDecodingsV3("012"));
+    System.out.println(s.numDecodingsV3("12"));
     System.out.println(s.numDecodingsV2("11106"));
-    System.out.println(s.numDecodings("226"));
+    System.out.println(s.numDecodingsV3("11106"));
     System.out.println(s.numDecodingsV2("226"));
-    System.out.println(s.numDecodings("1231234"));
+    System.out.println(s.numDecodingsV3("226"));
     System.out.println(s.numDecodingsV2("1231234"));
+    System.out.println(s.numDecodingsV3("1231234"));
   }
 }
