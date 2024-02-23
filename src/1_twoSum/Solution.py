@@ -3,5 +3,6 @@ class Solution:
     dict = {}
     for idx, n in enumerate(nums):
       dict[idx] = n
-    for key in dict.keys()
+    for key in dict.keys():
+      pass
       
