@@ -5,4 +5,4 @@ class Solution:
       dict[idx] = n
     for key in dict.keys():
       pass
-      
+    
