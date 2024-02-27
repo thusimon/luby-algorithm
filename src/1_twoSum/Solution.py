@@ -11,4 +11,3 @@ class Solution:
       if dict[subtract] >= 1:
         return [num, subtract]
     return []
-  
